@@ -51,6 +51,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.okhttp)
     implementation(libs.okhttpprofiler)
     implementation(libs.androidx.core.ktx)
