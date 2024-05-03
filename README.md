@@ -10,7 +10,7 @@ MVVM
 
 Jetpack Compose 
 
-Conpose Navigation
+Compose Navigation
 
 ViewModel
 
