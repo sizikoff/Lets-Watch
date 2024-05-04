@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.amicus.letswatch.MainViewModel
 import com.amicus.letswatch.Screens.MainScreen
 import com.amicus.letswatch.Screens.SplashScreen
 import com.amicus.letswatch.utils.Constants
@@ -16,15 +17,15 @@ sealed class Screens(val route:String){
     object Details:Screens(route = Constants.Screen.DETAIL_SCREEN)
 }
 @Composable
-fun SetupNavHost(navController: NavHostController) {
+fun SetupNavHost(navController: NavHostController,viewModel: MainViewModel) {
     NavHost(navController = navController,
         startDestination = Screens.Splash.route
     ){
         composable(route = Screens.Splash.route){
-        SplashScreen(navController = navController)
+        SplashScreen(navController = navController,viewModel = viewModel)
         }
         composable(route = Screens.Main.route){
-        MainScreen()
+        MainScreen(navController = navController,viewModel = viewModel)
         }
         composable(route = Screens.Details.route){
 

@@ -68,7 +68,7 @@ dependencies {
 
     implementation (libs.androidx.hilt.navigation.compose)
 
-
+    implementation (libs.okhttpprofiler)
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
     implementation (libs.kotlinx.coroutines.core)
