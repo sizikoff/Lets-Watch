@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.amicus.letswatch.navigation.SetupNavHost
 import com.amicus.letswatch.ui.theme.LetsWatchTheme
@@ -24,7 +25,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             LetsWatchTheme {
                 val navController = rememberNavController()
-                SetupNavHost(navController = navController)
+                val viewModel = hiltViewModel<MainViewModel>()
+                SetupNavHost(navController = navController,viewModel = viewModel)
             }
         }
     }
