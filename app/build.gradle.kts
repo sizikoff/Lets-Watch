@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
+
 }
 
 android {
@@ -8,6 +11,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
+
         applicationId = "com.amicus.letswatch"
         minSdk = 29
         targetSdk = 34
@@ -30,11 +34,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -51,6 +55,26 @@ android {
 
 dependencies {
 
+    // Coroutine Lifecycle Scopes
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.runtime.ktx.v241)
+    implementation (libs.androidx.lifecycle.livedata.ktx)
+    implementation (libs.androidx.activity.ktx)
+    implementation (libs.androidx.runtime.livedata)
+
+// Hilt
+    implementation (libs.hilt.android.v241)
+    kapt (libs.hilt.compiler)
+
+    implementation (libs.androidx.hilt.navigation.compose)
+
+
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.kotlinx.coroutines.core)
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.okhttp)
+    implementation (libs.hilt.android)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.okhttp)
     implementation(libs.okhttpprofiler)
