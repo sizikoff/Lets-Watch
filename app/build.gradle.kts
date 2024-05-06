@@ -66,6 +66,9 @@ dependencies {
     implementation (libs.hilt.android.v241)
     kapt (libs.hilt.compiler)
 
+    // Coil
+    implementation(libs.coil.compose)
+
     implementation (libs.androidx.hilt.navigation.compose)
 
     implementation (libs.okhttpprofiler)
