@@ -55,6 +55,8 @@ android {
 
 dependencies {
 
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.27.0")
+
     // Coroutine Lifecycle Scopes
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     implementation (libs.androidx.lifecycle.runtime.ktx.v241)
