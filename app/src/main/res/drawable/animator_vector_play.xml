@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/lets_watch_play">
+    <target
+        android:animation="@animator/from_transparent"
+        android:name="fromTransparentPath"/>
+</animated-vector>

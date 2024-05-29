@@ -15,12 +15,13 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val repository: ApiRepository):ViewModel(){
 
+    var isReady = false
+
     private val _allmovies = MutableLiveData<List<MoviesItem>>()
     val allmovies:LiveData<List<MoviesItem>>
         get() = _allmovies
 
     fun getAllMovies(){
-
         viewModelScope.launch {
             repository.getAllMovies().let {
                 if (it.isSuccessful) {
@@ -28,6 +29,7 @@ class MainViewModel @Inject constructor(private val repository: ApiRepository):V
                 }else{
                     Log.d("check","Failed to load movies : ${it.errorBody()}")
                 }
+                isReady = true
             }
         }
     }
