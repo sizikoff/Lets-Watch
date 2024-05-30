@@ -108,3 +108,4 @@ fun MoviesItem(item: MoviesItem, navController: NavHostController) {
         }
     }
 }
+
